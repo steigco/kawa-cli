@@ -1,6 +1,6 @@
 # Gelbe Seiten
 
-A command-line tool to search for business leads using the Google Maps API. The tool allows you to search for businesses in a specific city within a given radius and export the results to JSON files.
+A command-line tool that uses the Google Maps API to search for business leads in specific cities and exports the results to JSON files.
 
 ## Features
 
@@ -36,8 +36,6 @@ cargo run -- -c <city> -r <radius> -t <business-type> -x <exclude-type> -m <min-
 | `-x, --exclude-type` | Type of business to exclude (can be used multiple times) |
 | `-m, --min-rating` | Minimum rating threshold (0.0-5.0) |
 
-You can find valid business types [here](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
-
 ## Example Commands
 Search for restaurants in Munich with a minimum rating of 4.0:
 
@@ -59,16 +57,16 @@ Each lead contains the following information:
 
 ```json
 {
-    "place_id": "string",
     "name": "string",
     "address": "string",
-    "rating": "float",
-    "total_ratings": "integer",
-    "types": ["string"],
-    "location": {
-        "lat": "float",
-        "lng": "float"
-    }
+    "google_maps_url": "string",
+    "website": "string", 
+    "phone": "string | null",
+    "rating": "number",
+    "total_ratings": "number",
+    "business_type": ["string"],
+    "business_status": "string",
+    "is_operational": "boolean"
 }
 ```
 
