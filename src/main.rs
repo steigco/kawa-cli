@@ -1,6 +1,8 @@
 use clap::Parser;
+use gmap_api::GMap;
 
 mod error;
+mod gmap_api;
 mod types;
 
 use crate::error::AppError;
@@ -31,7 +33,16 @@ async fn main() -> Result<(), AppError> {
 
     let args = Args::parse();
 
-    println!("{:#?}", args);
+    let gmap_client = GMap::new()?;
+
+    println!("Getting coordinates for {}...", args.city);
+    let coordinates = gmap_client.get_coordinates(&args.city).await?;
+
+    let radius = args.radius.clamp(1, 50);
+    println!(
+        "Getting leads {}km around [{},{}]...",
+        radius, coordinates.latitude, coordinates.longitude
+    );
 
     Ok(())
 }
