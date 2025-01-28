@@ -36,6 +36,8 @@ cargo run -- -c <city> -r <radius> -t <business-type> -x <exclude-type> -m <min-
 | `-x, --exclude-type` | Type of business to exclude (can be used multiple times) |
 | `-m, --min-rating` | Minimum rating threshold (0.0-5.0) |
 
+You can find valid business types [here](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+
 ## Example Commands
 Search for restaurants in Munich with a minimum rating of 4.0:
 
