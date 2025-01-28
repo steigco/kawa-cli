@@ -1,3 +1,6 @@
 /target
 
 .env
+
+# Exclude leads
+leads/
