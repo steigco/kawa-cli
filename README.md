@@ -17,7 +17,7 @@ A command-line tool that uses the Google Maps API to search for business leads i
 2. Install Rust if you haven't already (https://rustup.rs/)
 3. Create a `.env` file in the root directory with your Google Maps API key:
     ```bash
-    GOOGLE_MAPS_API_KEY=your_api_key_here
+    GOOGLE_API_KEY=your_api_key_here
     ```
 
 ## Usage
@@ -60,7 +60,7 @@ Each lead contains the following information:
     "name": "string",
     "address": "string",
     "google_maps_url": "string",
-    "website": "string", 
+    "website": "string",
     "phone": "string | null",
     "rating": "number",
     "total_ratings": "number",
