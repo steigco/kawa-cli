@@ -5,9 +5,6 @@ pub enum AppError {
     #[error("Google API key not found in environment variables")]
     MissingApiKey,
 
-    #[error("No business types specified")]
-    NoBusinessTypes,
-
     #[error("Error getting coordinates: {0}")]
     GeocodingError(String),
 
